@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="quadruped">
+  <link name="base_footprint" >
+    </link>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000752495916009444 -0.080216130979565 -0.0778330308190568"
+        rpy="0 0 0" />
+      <mass
+        value="11.6015850130992" />
+      <inertia
+        ixx="0.043009263742307"
+        ixy="-3.70499990792607E-06"
+        ixz="-0.000403848618081728"
+        iyy="0.0588206185903865"
+        iyz="0.00155366137564753"
+        izz="0.0232715272003946" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.90784313725490196 0.89 0.984313725490196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_link2body_link" type="fixed">
+        <parent link="base_footprint" />
+        <child link="base_link" />
+        <origin rpy="-1.57079632679487 0 0" xyz="0 0 0.4" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+  <link
+    name="fl_hip">
+    <inertial>
+      <origin
+        xyz="4.92583133146676E-05 0.0535669995994788 0.0200990145510571"
+        rpy="0 0 0" />
+      <mass
+        value="0.62530929599068" />
+      <inertia
+        ixx="0.000369199602216348"
+        ixy="8.71408166676265E-07"
+        ixz="-1.10627450922441E-08"
+        iyy="0.000393009437394139"
+        iyz="-1.01602385775192E-06"
+        izz="0.000646977204485832" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/fl_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/fl_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_hip_joint"
+    type="continuous">
+    <origin
+      xyz="0.04675 0 -0.1316"
+      rpy="-1.57079632679487 0 -1.49760970819496" />
+    <parent
+      link="base_link" />
+    <child
+      link="fl_hip" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="fl_thigh">
+    <inertial>
+      <origin
+        xyz="0.0694334224905727 0.0071900522058161 -0.00769417299016467"
+        rpy="0 0 0" />
+      <mass
+        value="0.353957750380783" />
+      <inertia
+        ixx="0.00014080701353485"
+        ixy="-7.44567427545961E-05"
+        ixz="9.56636451746183E-05"
+        iyy="0.00218695117611276"
+        iyz="8.3243947292521E-06"
+        izz="0.00210735709219806" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/fl_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/fl_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_thigh_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0565 0.0698"
+      rpy="1.5708 0 -2.5408" />
+    <parent
+      link="fl_hip" />
+    <child
+      link="fl_thigh" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="fl_calf">
+    <inertial>
+      <origin
+        xyz="-0.120970927796247 0.0765623755604252 0.0123999113836051"
+        rpy="0 0 0" />
+      <mass
+        value="0.0970218655517484" />
+      <inertia
+        ixx="9.56073592044336E-05"
+        ixy="0.000108548966388269"
+        ixz="2.9516835495558E-10"
+        iyy="0.000160671805997434"
+        iyz="-2.65464775446173E-09"
+        izz="0.000245142144728119" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/fl_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/fl_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_calf_joint"
+    type="continuous">
+    <origin
+      xyz="0.213 -0.0027 0"
+      rpy="1.5708 0.60083 -3.1416" />
+    <parent
+      link="fl_thigh" />
+    <child
+      link="fl_calf" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="rl_hip">
+    <inertial>
+      <origin
+        xyz="-4.92749015765907E-05 -0.00293299455401402 -0.0105990354932866"
+        rpy="0 0 0" />
+      <mass
+        value="0.6253089067032" />
+      <inertia
+        ixx="0.000369210492129897"
+        ixy="-8.61586846076742E-07"
+        ixz="-7.78132992311227E-09"
+        iyy="0.000393019170316637"
+        iyz="1.0128732349074E-06"
+        izz="0.000646995625636194" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/rl_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/rl_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rl_hip_joint"
+    type="continuous">
+    <origin
+      xyz="0.0562432918733803 0.000356944543040213 0.1881"
+      rpy="1.5707963267949 0 -1.53321437081203" />
+    <parent
+      link="base_link" />
+    <child
+      link="rl_hip" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="rl_thigh">
+    <inertial>
+      <origin
+        xyz="0.0694338198098081 0.00719004738249336 -0.00769411856040869"
+        rpy="0 0 0" />
+      <mass
+        value="0.353956887418813" />
+      <inertia
+        ixx="0.000140808434417983"
+        ixy="-7.44570347959447E-05"
+        ixz="9.56639451737715E-05"
+        iyy="0.00218695314859873"
+        iyz="8.32374920165179E-06"
+        izz="0.00210735761325968" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/rl_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/rl_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rl_thigh_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.0603000000000004"
+      rpy="-1.5707963267949 0 2.43152992225609" />
+    <parent
+      link="rl_hip" />
+    <child
+      link="rl_thigh" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="rl_calf">
+    <inertial>
+      <origin
+        xyz="0.128594224187596 -0.0629170637871342 0.0124000366618044"
+        rpy="0 0 0" />
+      <mass
+        value="0.0970232335666546" />
+      <inertia
+        ixx="7.28432489188841E-05"
+        ixy="9.88966968480843E-05"
+        ixz="2.12425641848113E-09"
+        iyy="0.000183382219983255"
+        iyz="1.04817449349891E-09"
+        izz="0.000245088770891125" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/rl_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/rl_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rl_calf_joint"
+    type="continuous">
+    <origin
+      xyz="0.213 -0.0027 0"
+      rpy="-1.5708 -0.71006 0" />
+    <parent
+      link="rl_thigh" />
+    <child
+      link="rl_calf" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="fr_hip">
+    <inertial>
+      <origin
+        xyz="-4.92748089116575E-05 -0.00293299449838894 -0.0105990346313431"
+        rpy="0 0 0" />
+      <mass
+        value="0.625308921007543" />
+      <inertia
+        ixx="0.000369210502146603"
+        ixy="-8.61593095652429E-07"
+        ixz="-7.78524390606701E-09"
+        iyy="0.000393019185429056"
+        iyz="1.01286962529073E-06"
+        izz="0.000646995646564777" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/fr_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/fr_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_hip_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0562404499451662 0.000425863638135441 -0.1881"
+      rpy="-1.57079632679485 0 -1.61563910553559" />
+    <parent
+      link="base_link" />
+    <child
+      link="fr_hip" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="fr_thigh">
+    <inertial>
+      <origin
+        xyz="0.0694329825856921 -0.00718950506545733 -0.00769041540566529"
+        rpy="0 0 0" />
+      <mass
+        value="0.35396930863273" />
+      <inertia
+        ixx="0.000140853133154817"
+        ixy="7.44589068308154E-05"
+        ixz="9.57462266599708E-05"
+        iyy="0.00218717919572663"
+        iyz="-8.33426088466234E-06"
+        izz="0.00210754158994937" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/fr_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/fr_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_thigh_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.0603000000000002"
+      rpy="1.57079632679493 0 -2.4715817859872" />
+    <parent
+      link="fr_hip" />
+    <child
+      link="fr_thigh" />
+    <axis
+      xyz="0.0645326079958218 0.996605004293226 0.0511273696072495" />
+  </joint>
+  <link
+    name="fr_calf">
+    <inertial>
+      <origin
+        xyz="-0.128593718552932 -0.0629166298428721 0.0138998629767867"
+        rpy="0 0 0" />
+      <mass
+        value="0.0970264832242042" />
+      <inertia
+        ixx="7.28468896209138E-05"
+        ixy="-9.88997562689223E-05"
+        ixz="2.40537871751589E-09"
+        iyy="0.000183383466323058"
+        iyz="-1.06165210657005E-09"
+        izz="0.000245093434706865" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/fr_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/fr_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_calf_joint"
+    type="continuous">
+    <origin
+      xyz="0.213 0.0027 0"
+      rpy="-1.5708 0.67001 -3.1416" />
+    <parent
+      link="fr_thigh" />
+    <child
+      link="fr_calf" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="rr_hip">
+    <inertial>
+      <origin
+        xyz="4.92574375927459E-05 0.0535669995014552 0.0200990120878553"
+        rpy="0 0 0" />
+      <mass
+        value="0.625309338307514" />
+      <inertia
+        ixx="0.000369199655440014"
+        ixy="8.71417646450877E-07"
+        ixz="-1.10703136892281E-08"
+        iyy="0.000393009505004509"
+        iyz="-1.01600425720427E-06"
+        izz="0.000646977305780013" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/rr_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/rr_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rr_hip_joint"
+    type="continuous">
+    <origin
+      xyz="-0.04675 0 0.1316"
+      rpy="1.5708 0 -1.6452" />
+    <parent
+      link="base_link" />
+    <child
+      link="rr_hip" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="rr_thigh">
+    <inertial>
+      <origin
+        xyz="0.0694327946568081 -0.00718950066685925 -0.00769032696168029"
+        rpy="0 0 0" />
+      <mass
+        value="0.353970922817238" />
+      <inertia
+        ixx="0.000140853274670944"
+        ixy="7.44581344780103E-05"
+        ixz="9.57481304832568E-05"
+        iyy="0.00218717900209233"
+        iyz="-8.33442265729461E-06"
+        izz="0.00210754140942017" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/rr_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/rr_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rr_thigh_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0565 0.0698"
+      rpy="-1.5708 0 2.4716" />
+    <parent
+      link="rr_hip" />
+    <child
+      link="rr_thigh" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="rr_calf">
+    <inertial>
+      <origin
+        xyz="0.128592965497158 0.0629161701151437 0.0138998810820521"
+        rpy="0 0 0" />
+      <mass
+        value="0.0970272445884463" />
+      <inertia
+        ixx="7.28483962078478E-05"
+        ixy="-9.89013374906325E-05"
+        ixz="-2.45294777242467E-09"
+        iyy="0.000183383822186118"
+        iyz="1.04869980197243E-09"
+        izz="0.00024509533585515" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/rr_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://quadruped/meshes/rr_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rr_calf_joint"
+    type="continuous">
+    <origin
+      xyz="0.213 0.0027 0"
+      rpy="1.5708 -0.67001 0" />
+    <parent
+      link="rr_thigh" />
+    <child
+      link="rr_calf" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+</robot>
